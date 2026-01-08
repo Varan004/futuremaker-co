@@ -263,6 +263,7 @@ body {
 
 .menu-item {
 	height: 170px;
+	padding: 10px;
 	background: var(--glass-bg);
 	backdrop-filter: blur(20px);
 	-webkit-backdrop-filter: blur(20px);
@@ -1055,8 +1056,8 @@ body {
 }
 
 .service-row-icon {
-	width: 240px;
-	height: 180px;
+	width: 300px;
+	height: 300px;
 	min-width: 140px;
 	border-radius: 16px;
 	background: linear-gradient(135deg, rgba(0, 240, 255, 0.1), rgba(157, 78, 221, 0.1));
@@ -1080,8 +1081,8 @@ body {
 }
 
 .service-row-icon img {
-	width: 100%;
-	height: 100%;
+	width: 300px;
+	height: 300px;
 	object-fit: cover;
 	border-radius: 14px;
 }
@@ -1595,7 +1596,75 @@ body {
 		width: 100%;
 		max-width: 250px;
 	}
-
 }
 
-
+/* ===== Image Lightbox styles ===== */
+.image-lightbox {
+    position: fixed;
+    inset: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 20000;
+}
+.image-lightbox.open { display: flex; }
+.image-lightbox-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.75);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    opacity: 0;
+    transition: opacity 0.25s ease;
+}
+.image-lightbox.open .image-lightbox-overlay { opacity: 1; }
+.image-lightbox-inner {
+    position: relative;
+    max-width: 90%;
+    max-height: 90%;
+    box-shadow: 0 30px 80px rgba(0,0,0,0.7);
+    border-radius: 12px;
+    overflow: hidden;
+    background: rgba(0,0,0,0.6);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 12px;
+    transform: translateY(10px) scale(0.98);
+    transition: transform 0.25s ease, opacity 0.25s ease;
+}
+.image-lightbox.open .image-lightbox-inner { transform: translateY(0) scale(1); }
+.image-lightbox img#lightboxImage {
+    max-width: 100%;
+    max-height: calc(90vh - 110px);
+    object-fit: contain;
+    border-radius: 8px;
+    display: block;
+}
+.image-lightbox-close {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.08);
+    color: #fff;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 2;
+}
+.image-lightbox-caption {
+    margin-top: 12px;
+    color: rgba(255,255,255,0.8);
+    font-size: 14px;
+    text-align: center;
+    max-width: 90%;
+}
+@media (max-width: 768px) {
+    .image-lightbox-inner { padding: 8px; }
+    .image-lightbox-caption { font-size: 13px; }
+}
