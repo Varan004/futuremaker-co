@@ -254,9 +254,7 @@ body {
 
 /* Menu Grid */
 .menu-grid {
-	display: flex;
-	flex-direction: column;
-	gap: 20px;
+	display: grid;
 	grid-template-columns: repeat(3, 204px);
 	gap: 25px;
 	margin: 0 auto 40px;
@@ -1599,4 +1597,5 @@ body {
 	}
 
 }
+
 
