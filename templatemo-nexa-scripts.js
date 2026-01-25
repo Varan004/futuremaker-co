@@ -300,5 +300,24 @@ n   }, false);
 
 n})();
 
+// Announcement Modal Functions
+function toggleAnnouncement() {
+   const modal = document.getElementById('announcementModal');
+   if (modal.style.display === 'none') {
+      modal.style.display = 'flex';
+   } else {
+      modal.style.display = 'none';
+   }
+}
 
+function closeAnnouncement() {
+   document.getElementById('announcementModal').style.display = 'none';
+}
 
+// Close announcement modal when clicking outside
+document.addEventListener('click', function(e) {
+   const modal = document.getElementById('announcementModal');
+   if (e.target === modal) {
+      modal.style.display = 'none';
+   }
+});

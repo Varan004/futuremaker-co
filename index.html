@@ -33,6 +33,21 @@ https://templatemo.com/tm-603-nexaverse
     <!-- Grid Overlay -->
     <div class="grid-overlay"></div>
 
+    <!-- Announcement Button -->
+    <button class="announcement-btn" onclick="toggleAnnouncement()">
+        <span class="announcement-icon">🔔</span>
+        <span class="announcement-badge">1</span>
+    </button>
+
+    <!-- Announcement Modal -->
+    <div id="announcementModal" class="announcement-modal" style="display: none;">
+        <div class="announcement-content">
+            <button class="announcement-close" onclick="closeAnnouncement()">✕</button>
+            <h3>Latest Announcement</h3>
+            <p>Welcome to Futuremakers! Check out our latest courses and opportunities to grow your career.</p>
+        </div>
+    </div>
+
     <!-- Main Container -->
     <div class="container">
         <!-- Header -->

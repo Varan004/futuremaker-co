@@ -1668,3 +1668,151 @@ body {
     .image-lightbox-inner { padding: 8px; }
     .image-lightbox-caption { font-size: 13px; }
 }
+/* Announcement Button */
+.announcement-btn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+    border: 2px solid var(--primary);
+    color: #000;
+    font-size: 28px;
+    cursor: pointer;
+    z-index: 50;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 20px rgba(0, 240, 255, 0.5);
+}
+
+.announcement-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 30px rgba(0, 240, 255, 0.8);
+}
+
+.announcement-btn:active {
+    transform: scale(0.95);
+}
+
+.announcement-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.announcement-badge {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background: var(--secondary);
+    color: #fff;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: bold;
+    border: 2px solid var(--dark-1);
+}
+
+/* Announcement Modal */
+.announcement-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: none;
+    align-items: center;
+    justify-content: flex-end;
+    z-index: 100;
+    padding: 20px;
+}
+
+.announcement-content {
+    background: var(--dark-2);
+    border: 2px solid var(--primary);
+    border-radius: 15px;
+    padding: 30px;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 0 30px rgba(0, 240, 255, 0.3);
+    position: relative;
+    animation: slideIn 0.3s ease;
+}
+
+.announcement-content h3 {
+    color: var(--primary);
+    margin-bottom: 15px;
+    font-size: 20px;
+    font-family: 'Syne', sans-serif;
+}
+
+.announcement-content p {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.announcement-close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: transparent;
+    border: none;
+    color: var(--primary);
+    font-size: 28px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.announcement-close:hover {
+    transform: scale(1.2);
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(400px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@media (max-width: 768px) {
+    .announcement-btn {
+        width: 50px;
+        height: 50px;
+        font-size: 24px;
+        top: 15px;
+        right: 15px;
+    }
+
+    .announcement-badge {
+        width: 20px;
+        height: 20px;
+        font-size: 10px;
+    }
+
+    .announcement-content {
+        max-width: 350px;
+        padding: 20px;
+    }
+
+    .announcement-content h3 {
+        font-size: 18px;
+    }
+
+    .announcement-content p {
+        font-size: 13px;
+    }
+}
