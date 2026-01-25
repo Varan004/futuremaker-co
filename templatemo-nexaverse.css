@@ -362,7 +362,7 @@ body {
 	font-family: 'Syne', sans-serif;
 	font-size: 22px;
 	font-weight: 700;
-	margin: 0 auto 15px;
+	margin-bottom: 15px;
 	position: relative;
 	background: linear-gradient(135deg,
 			rgba(0, 240, 255, 0.15) 0%,
