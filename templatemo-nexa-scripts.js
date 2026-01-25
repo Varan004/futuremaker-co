@@ -298,29 +298,26 @@ n   }, false);
       if(e.key === 'Escape') closeLightbox();
    });
 
-})();
+n})();
 
 // Announcement Modal Functions
-const announcementBtn = document.getElementById('announcementBtn');
-const announcementModal = document.getElementById('announcementModal');
-
-announcementBtn.addEventListener('click', function() {
-   announcementModal.setAttribute('aria-hidden', 'false');
-   announcementModal.classList.add('show');
-   document.body.style.overflow = 'hidden';
-});
-
-function closeAnnouncementModal() {
-   announcementModal.setAttribute('aria-hidden', 'true');
-   announcementModal.classList.remove('show');
-   document.body.style.overflow = '';
+function toggleAnnouncement() {
+   const modal = document.getElementById('announcementModal');
+   if (modal.style.display === 'none') {
+      modal.style.display = 'flex';
+   } else {
+      modal.style.display = 'none';
+   }
 }
 
-document.addEventListener('keydown', function(e) {
-   if(e.key === 'Escape' && announcementModal.classList.contains('show')) {
-      closeAnnouncementModal();
+function closeAnnouncement() {
+   document.getElementById('announcementModal').style.display = 'none';
+}
+
+// Close announcement modal when clicking outside
+document.addEventListener('click', function(e) {
+   const modal = document.getElementById('announcementModal');
+   if (e.target === modal) {
+      modal.style.display = 'none';
    }
 });
-
-
-

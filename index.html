@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FUTUREMAKERS</title>
-    <link rel="icon" type="image/jpeg" href="FUTUMAKERS LOGO.jpg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;500;600&family=Syne:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -33,6 +32,22 @@ https://templatemo.com/tm-603-nexaverse
 
     <!-- Grid Overlay -->
     <div class="grid-overlay"></div>
+
+    <!-- Announcement Button -->
+    <button class="announcement-btn" onclick="toggleAnnouncement()">
+        <span class="announcement-icon">🔔</span>
+        <span class="announcement-badge">1</span>
+    </button>
+
+    <!-- Announcement Modal -->
+    <div id="announcementModal" class="announcement-modal" style="display: none;">
+        <div class="announcement-content">
+            <button class="announcement-close" onclick="closeAnnouncement()">✕</button>
+            <img src="DON’T MISS OUT.jpg" alt="Announcement" class="announcement-image">
+            <h3>Latest Announcement</h3>
+            <p>Welcome to Futuremakers! Check out our latest courses and opportunities to grow your career.</p>
+        </div>
+    </div>
 
     <!-- Main Container -->
     <div class="container">
@@ -93,6 +108,7 @@ https://templatemo.com/tm-603-nexaverse
                         </p>
                         <div class="intro-cta-group">
                             <button class="intro-cta-primary">Explore Our Work</button>
+                            
                         </div>
                     </div>
                     <div class="intro-hero-visual">
@@ -350,18 +366,6 @@ https://templatemo.com/tm-603-nexaverse
                             <div class="services-list">
                                 <div class="service-row">
                                     <div class="service-row-icon">
-                                        <img src="DON’T MISS OUT.jpg" alt="Don't miss out">
-                                    </div>
-                                    <div class="service-row-content">
-                                        <h4>Startup course</h4>
-                                        <p>FMC announcement.</p>
-                                        <p>WE are open for Online entrepreneur.</p>
-                                        <p>Available : 25:January:2026 to 27:January:2026</p>
-                                    </div>
-                                    <div class="service-row-arrow">→</div>
-                                </div>
-                                <div class="service-row">
-                                    <div class="service-row-icon">
                                         <img src="WhatsApp Image 2026-01-02 at 20.37.38.jpeg" alt="Startup course">
                                     </div>
                                     <div class="service-row-content">
@@ -416,6 +420,7 @@ https://templatemo.com/tm-603-nexaverse
                                         <h4>Online career Selection</h4>
                                         <p>FMC announcement.</p>
                                         <p>WE are providing online career guidence and online career opportunity </p>
+                                        <p>Available : Chance Closed</p>
                                     </div>
                                     <div class="service-row-arrow">→</div>
                                 </div>
@@ -485,42 +490,6 @@ https://templatemo.com/tm-603-nexaverse
         </footer>
     </div>
 
-    <!-- Announcement Modal Button -->
-    <button class="announcement-btn" id="announcementBtn" aria-label="Open announcements">
-        <span class="announcement-icon">📢</span>
-    </button>
-
-    <!-- Announcement Modal -->
-    <div id="announcementModal" class="announcement-modal" aria-hidden="true">
-        <div class="announcement-modal-overlay" onclick="closeAnnouncementModal()"></div>
-        <div class="announcement-modal-content" role="dialog" aria-modal="true">
-            <button class="announcement-modal-close" onclick="closeAnnouncementModal()" aria-label="Close">✕</button>
-            <div class="announcement-modal-header">
-                <h2>Latest Announcements</h2>
-            </div>
-            <div class="announcement-modal-body">
-                <div class="announcement-item">
-                    <img src="DON'T MISS OUT.jpg" alt="Startup Opportunity">
-                    <div class="announcement-text">
-                        <h3>Startup Course - Limited Time Offer</h3>
-                        <p>FMC announcement.</p>
-                        <p>Join our exclusive online entrepreneur program.</p>
-                        <p><strong>Available: 25-27 January 2026</strong></p>
-                    </div>
-                </div>
-                <div class="announcement-item">
-                    <img src="we are ready to guide.jpg" alt="Orientation Program">
-                    <div class="announcement-text">
-                        <h3>New Orientation Program</h3>
-                        <p>FMC announcement.</p>
-                        <p>Learn about online earning opportunities.</p>
-                        <p><strong>Register Now!</strong></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <!-- Image Lightbox -->
     <div id="imageLightbox" class="image-lightbox" aria-hidden="true">
         <div class="image-lightbox-overlay" data-close></div>
@@ -534,7 +503,6 @@ https://templatemo.com/tm-603-nexaverse
 </body>
 
 </html>
-
 
 
 

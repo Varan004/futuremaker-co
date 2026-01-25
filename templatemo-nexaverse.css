@@ -559,37 +559,6 @@ body {
 	font-size: 14px;
 	color: rgba(255, 255, 255, 0.5);
 	letter-spacing: 2px;
-	margin-bottom: 30px;
-}
-
-.announcement-apply-btn {
-	display: flex;
-	justify-content: center;
-	margin-top: 20px;
-}
-
-.apply-now-btn {
-	padding: 14px 40px;
-	background: linear-gradient(135deg, rgba(0, 240, 255, 0.3), rgba(157, 78, 221, 0.3));
-	backdrop-filter: blur(20px);
-	-webkit-backdrop-filter: blur(20px);
-	border: 1px solid var(--primary);
-	border-radius: 50px;
-	color: var(--primary);
-	font-family: 'Outfit', sans-serif;
-	font-size: 14px;
-	font-weight: 600;
-	letter-spacing: 1px;
-	cursor: pointer;
-	transition: all 0.3s ease;
-	text-decoration: none;
-	display: inline-block;
-}
-
-.apply-now-btn:hover {
-	background: rgba(0, 240, 255, 0.2);
-	box-shadow: 0 0 30px rgba(0, 240, 255, 0.5);
-	transform: translateY(-2px);
 }
 
 /* Glass Cards */
@@ -696,30 +665,6 @@ body {
 .intro-cta-primary:hover {
 	background: rgba(0, 240, 255, 0.15);
 	box-shadow: 0 0 25px rgba(0, 200, 220, 0.3);
-	transform: translateY(-2px);
-}
-
-.intro-cta-apply {
-	padding: 14px 32px;
-	background: linear-gradient(135deg, rgba(255, 0, 212, 0.3), rgba(157, 78, 221, 0.3));
-	backdrop-filter: blur(20px);
-	-webkit-backdrop-filter: blur(20px);
-	border: 1px solid var(--secondary);
-	border-radius: 50px;
-	color: var(--secondary);
-	font-family: 'Outfit', sans-serif;
-	font-size: 14px;
-	font-weight: 600;
-	letter-spacing: 1px;
-	cursor: pointer;
-	transition: all 0.3s ease;
-	text-decoration: none;
-	display: inline-block;
-}
-
-.intro-cta-apply:hover {
-	background: rgba(255, 0, 212, 0.2);
-	box-shadow: 0 0 25px rgba(255, 0, 212, 0.4);
 	transform: translateY(-2px);
 }
 
@@ -1719,7 +1664,10 @@ body {
     text-align: center;
     max-width: 90%;
 }
-
+@media (max-width: 768px) {
+    .image-lightbox-inner { padding: 8px; }
+    .image-lightbox-caption { font-size: 13px; }
+}
 /* Announcement Button */
 .announcement-btn {
     position: fixed;
@@ -1728,23 +1676,22 @@ body {
     width: 60px;
     height: 60px;
     border-radius: 50%;
-    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
     border: 2px solid var(--primary);
-    color: var(--dark-1);
+    color: #000;
     font-size: 28px;
     cursor: pointer;
-    z-index: 999;
+    z-index: 50;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 0 20px rgba(0, 240, 255, 0.5), 0 0 40px rgba(255, 0, 212, 0.3);
-    animation: pulse-glow 2s ease-in-out infinite;
     transition: all 0.3s ease;
+    box-shadow: 0 0 20px rgba(0, 240, 255, 0.5);
 }
 
 .announcement-btn:hover {
     transform: scale(1.1);
-    box-shadow: 0 0 30px rgba(0, 240, 255, 0.7), 0 0 60px rgba(255, 0, 212, 0.5);
+    box-shadow: 0 0 30px rgba(0, 240, 255, 0.8);
 }
 
 .announcement-btn:active {
@@ -1757,13 +1704,21 @@ body {
     justify-content: center;
 }
 
-@keyframes pulse-glow {
-    0%, 100% {
-        box-shadow: 0 0 20px rgba(0, 240, 255, 0.5), 0 0 40px rgba(255, 0, 212, 0.3);
-    }
-    50% {
-        box-shadow: 0 0 30px rgba(0, 240, 255, 0.7), 0 0 50px rgba(255, 0, 212, 0.5);
-    }
+.announcement-badge {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background: var(--secondary);
+    color: #fff;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: bold;
+    border: 2px solid var(--dark-1);
 }
 
 /* Announcement Modal */
@@ -1773,186 +1728,100 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 1000;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.3s ease;
-}
-
-.announcement-modal.show {
-    opacity: 1;
-    visibility: visible;
-}
-
-.announcement-modal-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
     background: rgba(0, 0, 0, 0.7);
-    backdrop-filter: blur(5px);
-    cursor: pointer;
+    display: none;
+    align-items: center;
+    justify-content: flex-end;
+    z-index: 100;
+    padding: 20px;
 }
 
-.announcement-modal-content {
-    position: relative;
+.announcement-content {
     background: var(--dark-2);
-    border: 1px solid var(--glass-border);
-    border-radius: 16px;
-    width: 90%;
-    max-width: 700px;
-    max-height: 80vh;
-    overflow-y: auto;
-    box-shadow: 0 8px 32px 0 rgba(0, 240, 255, 0.2);
-    animation: slideUp 0.3s ease;
-    padding: 0;
+    border: 2px solid var(--primary);
+    border-radius: 15px;
+    padding: 30px;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 0 30px rgba(0, 240, 255, 0.3);
+    position: relative;
+    animation: slideIn 0.3s ease;
 }
 
-@keyframes slideUp {
+.announcement-content h3 {
+    color: var(--primary);
+    margin-bottom: 15px;
+    font-size: 20px;
+    font-family: 'Syne', sans-serif;
+}
+
+.announcement-image {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    object-fit: cover;
+    display: block;
+}
+
+.announcement-content p {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.announcement-close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: transparent;
+    border: none;
+    color: var(--primary);
+    font-size: 28px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.announcement-close:hover {
+    transform: scale(1.2);
+}
+
+@keyframes slideIn {
     from {
-        transform: translateY(50px);
+        transform: translateX(400px);
         opacity: 0;
     }
     to {
-        transform: translateY(0);
+        transform: translateX(0);
         opacity: 1;
     }
 }
 
-.announcement-modal-header {
-    padding: 20px 25px;
-    border-bottom: 1px solid var(--glass-border);
-    background: linear-gradient(135deg, rgba(0, 240, 255, 0.1), rgba(255, 0, 212, 0.05));
-}
-
-.announcement-modal-header h2 {
-    font-size: 24px;
-    color: var(--primary);
-    margin: 0;
-    font-weight: 600;
-}
-
-.announcement-modal-close {
-    position: absolute;
-    top: 15px;
-    right: 15px;
-    background: none;
-    border: none;
-    color: rgba(255, 255, 255, 0.6);
-    font-size: 28px;
-    cursor: pointer;
-    z-index: 1001;
-    transition: all 0.2s ease;
-}
-
-.announcement-modal-close:hover {
-    color: var(--primary);
-    transform: rotate(90deg);
-}
-
-.announcement-modal-body {
-    padding: 25px;
-}
-
-.announcement-item {
-    display: flex;
-    gap: 20px;
-    margin-bottom: 20px;
-    padding: 15px;
-    background: rgba(255, 255, 255, 0.02);
-    border: 1px solid var(--glass-border);
-    border-radius: 12px;
-    transition: all 0.3s ease;
-}
-
-.announcement-item:hover {
-    background: rgba(0, 240, 255, 0.08);
-    border-color: rgba(0, 240, 255, 0.3);
-}
-
-.announcement-item img {
-    width: 120px;
-    height: 120px;
-    object-fit: cover;
-    border-radius: 8px;
-    flex-shrink: 0;
-}
-
-.announcement-text {
-    flex: 1;
-}
-
-.announcement-text h3 {
-    font-size: 16px;
-    color: var(--primary);
-    margin: 0 0 8px 0;
-    font-weight: 600;
-}
-
-.announcement-text p {
-    font-size: 14px;
-    color: rgba(255, 255, 255, 0.7);
-    margin: 4px 0;
-    line-height: 1.4;
-}
-
-.announcement-text strong {
-    color: var(--secondary);
-}
-
-/* Responsive Design */
 @media (max-width: 768px) {
     .announcement-btn {
-        top: 15px;
-        right: 15px;
         width: 50px;
         height: 50px;
         font-size: 24px;
+        top: 15px;
+        right: 15px;
     }
 
-    .announcement-modal-content {
-        width: 95%;
-        max-height: 85vh;
-        border-radius: 12px;
+    .announcement-badge {
+        width: 20px;
+        height: 20px;
+        font-size: 10px;
     }
 
-    .announcement-modal-header {
-        padding: 15px 20px;
+    .announcement-content {
+        max-width: 350px;
+        padding: 20px;
     }
 
-    .announcement-modal-header h2 {
-        font-size: 20px;
+    .announcement-content h3 {
+        font-size: 18px;
     }
 
-    .announcement-modal-body {
-        padding: 15px;
-    }
-
-    .announcement-item {
-        flex-direction: column;
-        gap: 10px;
-        padding: 12px;
-    }
-
-    .announcement-item img {
-        width: 100%;
-        height: 150px;
-    }
-
-    .announcement-text h3 {
-        font-size: 15px;
-    }
-
-    .announcement-text p {
+    .announcement-content p {
         font-size: 13px;
     }
-}
-
-@media (max-width: 768px) {
-    .image-lightbox-inner { padding: 8px; }
-    .image-lightbox-caption { font-size: 13px; }
 }
