@@ -255,7 +255,7 @@ body {
 /* Menu Grid */
 .menu-grid {
 	display: grid;
-	grid-template-columns: repeat(3, 204px);
+	grid-template-columns: repeat(2, 204px);
 	gap: 25px;
 	margin: 0 auto 40px;
 	justify-content: center;
