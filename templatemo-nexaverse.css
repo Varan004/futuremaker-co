@@ -255,7 +255,7 @@ body {
 /* Menu Grid */
 .menu-grid {
 	display: grid;
-	grid-template-columns: repeat(2, 204px);
+	grid-template-columns: repeat(3, 204px);
 	gap: 25px;
 	margin: 0 auto 40px;
 	justify-content: center;
@@ -1784,33 +1784,6 @@ body {
 
 .announcement-close:hover {
     transform: scale(1.2);
-}
-
-.apply-now-btn {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 12px 30px;
-    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-    color: var(--dark-1);
-    text-decoration: none;
-    border-radius: 8px;
-    font-weight: 600;
-    font-size: 15px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    text-align: center;
-    border: none;
-    font-family: 'Outfit', sans-serif;
-    box-shadow: 0 0 20px rgba(0, 240, 255, 0.3);
-}
-
-.apply-now-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 0 30px rgba(0, 240, 255, 0.5);
-}
-
-.apply-now-btn:active {
-    transform: translateY(0);
 }
 
 @keyframes slideIn {
