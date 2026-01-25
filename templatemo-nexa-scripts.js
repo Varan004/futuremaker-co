@@ -299,6 +299,27 @@ n   }, false);
    });
 
 n})();
+// Announcement Modal Functions
+function closeAnnouncement() {
+   const modal = document.getElementById('announcementModal');
+   if (modal) {
+      modal.style.animation = 'slideOutRight 0.4s ease-out forwards';
+      setTimeout(() => {
+         modal.style.display = 'none';
+      }, 400);
+   }
+}
 
+function exploreOpportunity() {
+   const modal = document.getElementById('announcementModal');
+   if (modal) {
+      modal.style.animation = 'slideOutRight 0.4s ease-out forwards';
+      setTimeout(() => {
+         modal.style.display = 'none';
+         // Navigate to opportunity section
+         showSection('opportunity');
+      }, 400);
+   }
+}
 
 
