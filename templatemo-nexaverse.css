@@ -1786,6 +1786,35 @@ body {
     transform: scale(1.2);
 }
 
+.apply-now-btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 28px;
+    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+    border: 2px solid var(--primary);
+    border-radius: 50px;
+    color: #000;
+    text-decoration: none;
+    font-family: 'Syne', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 15px rgba(0, 240, 255, 0.4);
+}
+
+.apply-now-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 25px rgba(0, 240, 255, 0.6);
+    background: linear-gradient(135deg, var(--secondary) 0%, var(--primary) 100%);
+}
+
+.apply-now-btn:active {
+    transform: translateY(0);
+}
+
 @keyframes slideIn {
     from {
         transform: translateX(400px);
