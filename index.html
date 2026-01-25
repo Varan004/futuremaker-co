@@ -33,20 +33,6 @@ https://templatemo.com/tm-603-nexaverse
     <!-- Grid Overlay -->
     <div class="grid-overlay"></div>
 
-    <!-- Announcement Button -->
-    <div class="announcement-btn" id="announcementBtn">
-        <img src="DON'T MISS OUT.jpg" alt="Announcement" class="announcement-img">
-        <div class="announcement-popup" id="announcementPopup">
-            <button class="announcement-close" onclick="closeAnnouncement()">&times;</button>
-            <div class="announcement-content">
-                <img src="DON'T MISS OUT.jpg" alt="Announcement Image" class="announcement-popup-img">
-                <h3>Special Announcement</h3>
-                <p>Don't miss our latest opportunity!</p>
-                <a href="https://docs.google.com/forms/d/e/1FAIpQLSc1t5t5t5t5t5t5t5t5t5t5t5t5t5t5t5t5t5t5t5t5t5t5t5t5t5/viewform" target="_blank" class="apply-btn">Apply Now</a>
-            </div>
-        </div>
-    </div>
-
     <!-- Main Container -->
     <div class="container">
         <!-- Header -->
@@ -508,22 +494,6 @@ https://templatemo.com/tm-603-nexaverse
         </div>
     </div>
 <script src="templatemo-nexa-scripts.js"></script>
-<script>
-    function closeAnnouncement() {
-        const popup = document.getElementById('announcementPopup');
-        popup.style.display = 'none';
-    }
-
-    document.getElementById('announcementBtn').addEventListener('click', function(e) {
-        if (e.target.closest('.announcement-close')) return;
-        const popup = document.getElementById('announcementPopup');
-        if (popup.style.display === 'none') {
-            popup.style.display = 'flex';
-        } else {
-            popup.style.display = 'none';
-        }
-    });
-</script>
 </body>
 
 </html>
