@@ -252,6 +252,58 @@ body {
 	font-weight: 300;
 }
 
+/* Announcement Button */
+.announcement-btn {
+	position: fixed;
+	top: 30px;
+	left: 30px;
+	z-index: 50;
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	padding: 12px 20px;
+	background: var(--glass-bg);
+	backdrop-filter: blur(20px);
+	-webkit-backdrop-filter: blur(20px);
+	border: 1.5px solid var(--primary);
+	border-radius: 50px;
+	color: var(--primary);
+	font-size: 14px;
+	font-weight: 600;
+	cursor: pointer;
+	transition: all 0.3s ease;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	font-family: 'Outfit', sans-serif;
+}
+
+.announcement-icon {
+	font-size: 18px;
+	display: flex;
+	align-items: center;
+	animation: pulse 2s ease-in-out infinite;
+}
+
+.announcement-btn:hover {
+	background: rgba(0, 240, 255, 0.1);
+	border-color: var(--primary);
+	box-shadow: 0 0 20px rgba(0, 240, 255, 0.5), inset 0 0 20px rgba(0, 240, 255, 0.1);
+	transform: translateY(-2px);
+}
+
+.announcement-btn:active {
+	transform: translateY(0);
+}
+
+@keyframes pulse {
+	0%, 100% {
+		transform: scale(1);
+	}
+	50% {
+		transform: scale(1.1);
+	}
+}
+
 /* Menu Grid */
 .menu-grid {
 	display: grid;
