@@ -1719,187 +1719,240 @@ body {
     text-align: center;
     max-width: 90%;
 }
-@media (max-width: 768px) {
-    .image-lightbox-inner { padding: 8px; }
-    .image-lightbox-caption { font-size: 13px; }
-}
 
-/* ===== Announcement Modal Styles ===== */
-.announcement-modal {
+/* Announcement Button */
+.announcement-btn {
     position: fixed;
     top: 20px;
     right: 20px;
-    width: 350px;
-    background: var(--glass-bg);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border: 1px solid var(--glass-border);
-    border-radius: 16px;
-    padding: 0;
-    overflow: hidden;
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
-    z-index: 5000;
-    animation: slideInRight 0.5s ease-out;
-}
-
-@keyframes slideInRight {
-    from {
-        transform: translateX(400px);
-        opacity: 0;
-    }
-    to {
-        transform: translateX(0);
-        opacity: 1;
-    }
-}
-
-@keyframes slideOutRight {
-    from {
-        transform: translateX(0);
-        opacity: 1;
-    }
-    to {
-        transform: translateX(400px);
-        opacity: 0;
-    }
-}
-
-.announcement-modal::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 1px;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-    z-index: 1;
-}
-
-.announcement-close {
-    position: absolute;
-    top: 12px;
-    right: 12px;
-    width: 32px;
-    height: 32px;
-    background: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.15);
+    width: 60px;
+    height: 60px;
     border-radius: 50%;
-    color: #fff;
-    font-size: 18px;
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    border: 2px solid var(--primary);
+    color: var(--dark-1);
+    font-size: 28px;
     cursor: pointer;
+    z-index: 999;
     display: flex;
     align-items: center;
     justify-content: center;
+    box-shadow: 0 0 20px rgba(0, 240, 255, 0.5), 0 0 40px rgba(255, 0, 212, 0.3);
+    animation: pulse-glow 2s ease-in-out infinite;
     transition: all 0.3s ease;
-    z-index: 10;
-}
-
-.announcement-close:hover {
-    background: rgba(255, 255, 255, 0.2);
-    border-color: var(--primary);
-    color: var(--primary);
-}
-
-.announcement-content {
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-.announcement-image {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 12px;
-    display: block;
-}
-
-.announcement-text {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.announcement-text h3 {
-    font-family: 'Syne', sans-serif;
-    font-size: 18px;
-    font-weight: 600;
-    background: linear-gradient(135deg, var(--primary) 0%, #ffffff 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    margin: 0;
-}
-
-.announcement-text p {
-    font-size: 13px;
-    color: rgba(255, 255, 255, 0.7);
-    line-height: 1.5;
-    margin: 0;
-}
-
-.announcement-btn {
-    padding: 10px 20px;
-    background: linear-gradient(135deg, rgba(0, 240, 255, 0.2), rgba(157, 78, 221, 0.2));
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border: 1px solid var(--primary);
-    border-radius: 8px;
-    color: var(--primary);
-    font-family: 'Outfit', sans-serif;
-    font-size: 12px;
-    font-weight: 600;
-    letter-spacing: 1px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    margin-top: 5px;
 }
 
 .announcement-btn:hover {
-    background: rgba(0, 240, 255, 0.3);
-    box-shadow: 0 0 20px rgba(0, 240, 255, 0.4);
-    transform: translateY(-2px);
+    transform: scale(1.1);
+    box-shadow: 0 0 30px rgba(0, 240, 255, 0.7), 0 0 60px rgba(255, 0, 212, 0.5);
 }
 
-/* Responsive for smaller screens */
+.announcement-btn:active {
+    transform: scale(0.95);
+}
+
+.announcement-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@keyframes pulse-glow {
+    0%, 100% {
+        box-shadow: 0 0 20px rgba(0, 240, 255, 0.5), 0 0 40px rgba(255, 0, 212, 0.3);
+    }
+    50% {
+        box-shadow: 0 0 30px rgba(0, 240, 255, 0.7), 0 0 50px rgba(255, 0, 212, 0.5);
+    }
+}
+
+/* Announcement Modal */
+.announcement-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.announcement-modal.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.announcement-modal-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(5px);
+    cursor: pointer;
+}
+
+.announcement-modal-content {
+    position: relative;
+    background: var(--dark-2);
+    border: 1px solid var(--glass-border);
+    border-radius: 16px;
+    width: 90%;
+    max-width: 700px;
+    max-height: 80vh;
+    overflow-y: auto;
+    box-shadow: 0 8px 32px 0 rgba(0, 240, 255, 0.2);
+    animation: slideUp 0.3s ease;
+    padding: 0;
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.announcement-modal-header {
+    padding: 20px 25px;
+    border-bottom: 1px solid var(--glass-border);
+    background: linear-gradient(135deg, rgba(0, 240, 255, 0.1), rgba(255, 0, 212, 0.05));
+}
+
+.announcement-modal-header h2 {
+    font-size: 24px;
+    color: var(--primary);
+    margin: 0;
+    font-weight: 600;
+}
+
+.announcement-modal-close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 28px;
+    cursor: pointer;
+    z-index: 1001;
+    transition: all 0.2s ease;
+}
+
+.announcement-modal-close:hover {
+    color: var(--primary);
+    transform: rotate(90deg);
+}
+
+.announcement-modal-body {
+    padding: 25px;
+}
+
+.announcement-item {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--glass-border);
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+.announcement-item:hover {
+    background: rgba(0, 240, 255, 0.08);
+    border-color: rgba(0, 240, 255, 0.3);
+}
+
+.announcement-item img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 8px;
+    flex-shrink: 0;
+}
+
+.announcement-text {
+    flex: 1;
+}
+
+.announcement-text h3 {
+    font-size: 16px;
+    color: var(--primary);
+    margin: 0 0 8px 0;
+    font-weight: 600;
+}
+
+.announcement-text p {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.7);
+    margin: 4px 0;
+    line-height: 1.4;
+}
+
+.announcement-text strong {
+    color: var(--secondary);
+}
+
+/* Responsive Design */
 @media (max-width: 768px) {
-    .announcement-modal {
-        width: 300px;
+    .announcement-btn {
         top: 15px;
         right: 15px;
+        width: 50px;
+        height: 50px;
+        font-size: 24px;
     }
 
-    .announcement-image {
-        height: 160px;
+    .announcement-modal-content {
+        width: 95%;
+        max-height: 85vh;
+        border-radius: 12px;
     }
 
-    .announcement-text h3 {
-        font-size: 16px;
+    .announcement-modal-header {
+        padding: 15px 20px;
     }
 
-    .announcement-text p {
-        font-size: 12px;
-    }
-}
-
-@media (max-width: 480px) {
-    .announcement-modal {
-        width: calc(100vw - 30px);
-        max-width: 280px;
-        top: 10px;
-        right: 15px;
+    .announcement-modal-header h2 {
+        font-size: 20px;
     }
 
-    .announcement-image {
-        height: 140px;
-    }
-
-    .announcement-content {
+    .announcement-modal-body {
         padding: 15px;
+    }
+
+    .announcement-item {
+        flex-direction: column;
+        gap: 10px;
+        padding: 12px;
+    }
+
+    .announcement-item img {
+        width: 100%;
+        height: 150px;
     }
 
     .announcement-text h3 {
         font-size: 15px;
     }
+
+    .announcement-text p {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 768px) {
+    .image-lightbox-inner { padding: 8px; }
+    .image-lightbox-caption { font-size: 13px; }
 }

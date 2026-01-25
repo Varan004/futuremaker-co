@@ -485,6 +485,42 @@ https://templatemo.com/tm-603-nexaverse
         </footer>
     </div>
 
+    <!-- Announcement Modal Button -->
+    <button class="announcement-btn" id="announcementBtn" aria-label="Open announcements">
+        <span class="announcement-icon">📢</span>
+    </button>
+
+    <!-- Announcement Modal -->
+    <div id="announcementModal" class="announcement-modal" aria-hidden="true">
+        <div class="announcement-modal-overlay" onclick="closeAnnouncementModal()"></div>
+        <div class="announcement-modal-content" role="dialog" aria-modal="true">
+            <button class="announcement-modal-close" onclick="closeAnnouncementModal()" aria-label="Close">✕</button>
+            <div class="announcement-modal-header">
+                <h2>Latest Announcements</h2>
+            </div>
+            <div class="announcement-modal-body">
+                <div class="announcement-item">
+                    <img src="DON'T MISS OUT.jpg" alt="Startup Opportunity">
+                    <div class="announcement-text">
+                        <h3>Startup Course - Limited Time Offer</h3>
+                        <p>FMC announcement.</p>
+                        <p>Join our exclusive online entrepreneur program.</p>
+                        <p><strong>Available: 25-27 January 2026</strong></p>
+                    </div>
+                </div>
+                <div class="announcement-item">
+                    <img src="we are ready to guide.jpg" alt="Orientation Program">
+                    <div class="announcement-text">
+                        <h3>New Orientation Program</h3>
+                        <p>FMC announcement.</p>
+                        <p>Learn about online earning opportunities.</p>
+                        <p><strong>Register Now!</strong></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Image Lightbox -->
     <div id="imageLightbox" class="image-lightbox" aria-hidden="true">
         <div class="image-lightbox-overlay" data-close></div>
@@ -492,20 +528,6 @@ https://templatemo.com/tm-603-nexaverse
             <button class="image-lightbox-close" aria-label="Close">✕</button>
             <img id="lightboxImage" src="" alt="" />
             <div id="lightboxCaption" class="image-lightbox-caption"></div>
-        </div>
-    </div>
-
-    <!-- Announcement Modal -->
-    <div id="announcementModal" class="announcement-modal">
-        <button class="announcement-close" onclick="closeAnnouncement()">✕</button>
-        <div class="announcement-content">
-            <img src="DON'T MISS OUT.jpg" alt="Announcement" class="announcement-image">
-            <div class="announcement-text">
-                <h3>Special Announcement!</h3>
-                <p>Limited time opportunity available for online entrepreneurs.</p>
-                <p><strong>Dates: 25-27 January 2026</strong></p>
-                <button class="announcement-btn" onclick="exploreOpportunity()">Learn More</button>
-            </div>
         </div>
     </div>
 <script src="templatemo-nexa-scripts.js"></script>

@@ -298,28 +298,29 @@ n   }, false);
       if(e.key === 'Escape') closeLightbox();
    });
 
-n})();
+})();
+
 // Announcement Modal Functions
-function closeAnnouncement() {
-   const modal = document.getElementById('announcementModal');
-   if (modal) {
-      modal.style.animation = 'slideOutRight 0.4s ease-out forwards';
-      setTimeout(() => {
-         modal.style.display = 'none';
-      }, 400);
-   }
+const announcementBtn = document.getElementById('announcementBtn');
+const announcementModal = document.getElementById('announcementModal');
+
+announcementBtn.addEventListener('click', function() {
+   announcementModal.setAttribute('aria-hidden', 'false');
+   announcementModal.classList.add('show');
+   document.body.style.overflow = 'hidden';
+});
+
+function closeAnnouncementModal() {
+   announcementModal.setAttribute('aria-hidden', 'true');
+   announcementModal.classList.remove('show');
+   document.body.style.overflow = '';
 }
 
-function exploreOpportunity() {
-   const modal = document.getElementById('announcementModal');
-   if (modal) {
-      modal.style.animation = 'slideOutRight 0.4s ease-out forwards';
-      setTimeout(() => {
-         modal.style.display = 'none';
-         // Navigate to opportunity section
-         showSection('opportunity');
-      }, 400);
+document.addEventListener('keydown', function(e) {
+   if(e.key === 'Escape' && announcementModal.classList.contains('show')) {
+      closeAnnouncementModal();
    }
-}
+});
+
 
 
