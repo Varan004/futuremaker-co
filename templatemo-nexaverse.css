@@ -1673,7 +1673,7 @@ body {
     position: fixed;
     top: 20px;
     right: 20px;
-    width: 60px;
+    width: 100px;
     height: 60px;
     border-radius: 50%;
     background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
