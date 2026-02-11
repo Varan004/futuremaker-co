@@ -1670,23 +1670,21 @@ body {
 }
 /* Announcement Button */
 .announcement-btn {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    width: 100px;
-    height: 60px;
-    border-radius: 50%;
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 30px;
     background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-    border: 2px solid var(--primary);
-    color: #000;
-    font-size: 28px;
+    color: var(--dark-1);
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 15px;
     cursor: pointer;
-    z-index: 50;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     transition: all 0.3s ease;
-    box-shadow: 0 0 20px rgba(0, 240, 255, 0.5);
+    text-align: center;
+    border: none;
+    font-family: 'Outfit', sans-serif;
+    box-shadow: 0 0 20px rgba(0, 240, 255, 0.3);
 }
 
 .announcement-btn:hover {
